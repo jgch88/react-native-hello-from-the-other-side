@@ -17,8 +17,10 @@ class HelloFromTheOtherSideModule(reactContext: ReactApplicationContext) : React
     fun multiply(a: Int, b: Int, promise: Promise) {
     
       promise.resolve(a * b)
-    
     }
 
-    
+    @ReactMethod
+    fun greet(name: String, promise: Promise) {
+        promise.resolve("Hello $name")
+    }
 }
